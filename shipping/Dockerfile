@@ -6,7 +6,7 @@ RUN mvn dependency:resolve
 COPY src ./src
 RUN mvn package -DskipTests
 
-FROM openjdk:8-jre-alpine
+FROM alpine:latest
 
 EXPOSE 8080
 
@@ -14,6 +14,8 @@ WORKDIR /opt/shipping
 
 ENV CART_ENDPOINT=cart:8080
 ENV DB_HOST=mysql
+
+RUN apk add --no-cache openjdk8-jre
 
 COPY --from=build /opt/shipping/target/shipping-1.0.jar shipping.jar
 
