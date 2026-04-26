@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: <YOUR_REGISTRY>/rs-catalogue:latest
+        image: ghcr.io/arrsshhiqq/rs-catalogue:latest
         ports:
         - containerPort: 8080
 ---
@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: <YOUR_REGISTRY>/rs-user:latest
+        image: ghcr.io/arrsshhiqq/rs-user:latest
         ports:
         - containerPort: 8080
 ---
@@ -86,7 +86,7 @@ spec:
     spec:
       containers:
       - name: cart
-        image: <YOUR_REGISTRY>/rs-cart:latest
+        image: ghcr.io/arrsshhiqq/rs-cart:latest
         ports:
         - containerPort: 8080
 ---
@@ -121,7 +121,7 @@ spec:
     spec:
       containers:
       - name: shipping
-        image: <YOUR_REGISTRY>/rs-shipping:latest
+        image: ghcr.io/arrsshhiqq/rs-shipping:latest
         ports:
         - containerPort: 8080
 ---
@@ -156,7 +156,7 @@ spec:
     spec:
       containers:
       - name: ratings
-        image: <YOUR_REGISTRY>/rs-ratings:latest
+        image: ghcr.io/arrsshhiqq/rs-ratings:latest
         env:
         - name: APP_ENV
           value: prod
@@ -194,7 +194,7 @@ spec:
     spec:
       containers:
       - name: payment
-        image: <YOUR_REGISTRY>/rs-payment:latest
+        image: ghcr.io/arrsshhiqq/rs-payment:latest
         ports:
         - containerPort: 8080
 ---
@@ -229,7 +229,7 @@ spec:
     spec:
       containers:
       - name: dispatch
-        image: <YOUR_REGISTRY>/rs-dispatch:latest
+        image: ghcr.io/arrsshhiqq/rs-dispatch:latest
         ports:
         - containerPort: 8080
 ---
@@ -264,7 +264,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: <YOUR_REGISTRY>/rs-web:latest
+        image: ghcr.io/arrsshhiqq/rs-web:latest
         ports:
         - containerPort: 8080
 ---

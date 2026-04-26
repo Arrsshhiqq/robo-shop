@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: <YOUR_REGISTRY>/rs-mongodb:latest
+        image: ghcr.io/arrsshhiqq/rs-mongodb:latest
         ports:
         - containerPort: 27017
 ---
@@ -126,7 +126,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: <YOUR_REGISTRY>/rs-mysql-db:latest
+        image: ghcr.io/arrsshhiqq/rs-mysql-db:latest
         ports:
         - containerPort: 3306
 ---
