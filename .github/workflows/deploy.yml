@@ -1,0 +1,36 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push with Docker Compose
+        run: |
+          # Ensure REPO is lowercase
+          export REPO=$(echo "ghcr.io/${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          export TAG=latest
+          
+          # Build all services defined in docker-compose.yaml
+          docker compose build
+          
+          # Push all built images to GHCR
+          docker compose push
